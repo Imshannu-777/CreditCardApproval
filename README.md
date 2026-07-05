@@ -6,7 +6,7 @@ An end-to-end Machine Learning web application that predicts whether a credit ca
 
 ## 🚀 Live Demo
 
-> Run locally using Flask (see setup instructions below)
+> Clone the repo and run locally using Flask (see setup instructions below)
 
 ---
 
