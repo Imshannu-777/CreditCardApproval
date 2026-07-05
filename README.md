@@ -86,8 +86,7 @@ Two CSV files:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/CreditCardApproval.git
-cd CreditCardApproval
+git clone (https://github.com/Imshannu-777/CreditCardApproval.git)
 ```
 
 ### 2. Install dependencies
