@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply | CreditPredict</title>
+<style>
+  :root{
+    --bg:#0B1929;
+    --panel:#10233B;
+    --panel-line:#1E3A5C;
+    --primary:#3B82F6;
+    --text:#E8EEF6;
+    --muted:#8FA3BD;
+    --mono: 'Cascadia Code', 'Consolas', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI', system-ui, sans-serif;
+    background:
+      radial-gradient(circle at 10% 0%, rgba(59,130,246,0.08), transparent 35%),
+      var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    padding:40px 20px 80px;
+  }
+  .topbar{
+    max-width:880px;
+    margin:0 auto 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    font-weight:700;font-size:1.05em;
+  }
+  .logo-mark{
+    width:26px;height:26px;border-radius:7px;
+    background:linear-gradient(135deg,#3B82F6,#1E40AF);
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.8em;font-weight:800;
+  }
+  a.back{
+    color:var(--muted);
+    text-decoration:none;
+    font-size:0.85em;
+  }
+  a.back:hover{color:var(--text);}
+
+  .header-block{
+    max-width:880px;
+    margin:0 auto 32px;
+  }
+  .header-block .eyebrow{
+    font-family:var(--mono);
+    font-size:0.75em;
+    color:var(--primary);
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+  }
+  .header-block h1{
+    font-size:1.9em;
+    font-weight:800;
+    letter-spacing:-0.8px;
+    margin-top:8px;
+  }
+  .header-block p{
+    color:var(--muted);
+    margin-top:6px;
+    font-size:0.95em;
+  }
+
+  form{
+    max-width:880px;
+    margin:0 auto;
+  }
+  .section{
+    background:var(--panel);
+    border:1px solid var(--panel-line);
+    border-radius:14px;
+    padding:28px 32px;
+    margin-bottom:20px;
+  }
+  .section-title{
+    font-size:0.78em;
+    font-weight:700;
+    color:var(--primary);
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .section-title::before{
+    content:'';
+    width:6px;height:6px;
+    border-radius:50%;
+    background:var(--primary);
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px 22px;
+  }
+  .field{
+    display:flex;
+    flex-direction:column;
+  }
+  .field label{
+    font-size:0.8em;
+    color:var(--muted);
+    margin-bottom:7px;
+    font-weight:600;
+  }
+  .field select, .field input{
+    background:#0D1F35;
+    border:1px solid var(--panel-line);
+    border-radius:8px;
+    padding:11px 13px;
+    color:var(--text);
+    font-size:0.92em;
+    font-family:inherit;
+    transition:border-color 0.15s ease;
+  }
+  .field select:focus, .field input:focus{
+    outline:none;
+    border-color:var(--primary);
+  }
+  .field select option{background:#0D1F35;}
+  .field input::placeholder{color:#56708F;}
+
+  .submit-row{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:8px;
+  }
+  button{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:15px 38px;
+    border-radius:10px;
+    font-size:1em;
+    font-weight:700;
+    cursor:pointer;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow:0 8px 22px rgba(59,130,246,0.25);
+  }
+  button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 26px rgba(59,130,246,0.35);
+  }
+
+  @media (max-width:700px){
+    .grid{grid-template-columns:1fr;}
+    .section{padding:22px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">
+    <div class="logo-mark">CP</div>
+    CreditPredict
+  </div>
+  <a class="back" href="/">← Back to home</a>
+</div>
+
+<div class="header-block">
+  <span class="eyebrow">Application Form</span>
+  <h1>Tell us about the applicant</h1>
+  <p>All fields are used by the prediction model — accuracy here improves the result.</p>
+</div>
+
+<form action="/result" method="POST">
+
+  <div class="section">
+    <div class="section-title">Personal Details</div>
+    <div class="grid">
+      <div class="field">
+        <label>Gender</label>
+        <select name="CODE_GENDER" required>
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Age (years)</label>
+        <input type="number" name="AGE" placeholder="e.g. 35" min="18" max="100" required>
+      </div>
+      <div class="field">
+        <label>Family Status</label>
+        <select name="NAME_FAMILY_STATUS" required>
+          <option value="0">Civil Marriage</option>
+          <option value="1">Married</option>
+          <option value="2">Separated</option>
+          <option value="3">Single / Not Married</option>
+          <option value="4">Widow</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Family Members</label>
+        <input type="number" name="FAMILY_MEMBERS" placeholder="e.g. 3" min="1" required>
+      </div>
+      <div class="field">
+        <label>Children</label>
+        <input type="number" name="CHILDREN" placeholder="e.g. 1" min="0" required>
+      </div>
+      <div class="field">
+        <label>Education Type</label>
+        <select name="NAME_EDUCATION_TYPE" required>
+          <option value="0">Academic Degree</option>
+          <option value="1">Higher Education</option>
+          <option value="2">Incomplete Higher</option>
+          <option value="3">Lower Secondary</option>
+          <option value="4">Secondary / Secondary Special</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Financial Profile</div>
+    <div class="grid">
+      <div class="field">
+        <label>Annual Income (₹)</label>
+        <input type="number" name="AMT_INCOME_TOTAL" placeholder="e.g. 500000" min="0" required>
+      </div>
+      <div class="field">
+        <label>Income Type</label>
+        <select name="NAME_INCOME_TYPE" required>
+          <option value="0">Commercial Associate</option>
+          <option value="1">Pensioner</option>
+          <option value="2">State Servant</option>
+          <option value="3">Student</option>
+          <option value="4">Working</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Years Employed</label>
+        <input type="number" name="YEARS_EMPLOYED" placeholder="e.g. 5" min="0" required>
+      </div>
+      <div class="field">
+        <label>Housing Type</label>
+        <select name="NAME_HOUSING_TYPE" required>
+          <option value="0">Co-op Apartment</option>
+          <option value="1">House / Apartment</option>
+          <option value="2">Municipal Apartment</option>
+          <option value="3">Office Apartment</option>
+          <option value="4">Rented Apartment</option>
+          <option value="5">With Parents</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Owns a Car?</label>
+        <select name="FLAG_OWN_CAR" required>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Owns Realty?</label>
+        <select name="FLAG_OWN_REALTY" required>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Contact Information</div>
+    <div class="grid">
+      <div class="field">
+        <label>Mobile Phone</label>
+        <select name="FLAG_MOBIL" required>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Work Phone</label>
+        <select name="FLAG_WORK_PHONE" required>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Home Phone</label>
+        <select name="FLAG_PHONE" required>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <select name="FLAG_EMAIL" required>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Credit Account History</div>
+    <div class="grid">
+      <div class="field">
+        <label>Total Months of Credit History</label>
+        <input type="number" name="TOTAL_MONTHS" placeholder="e.g. 36 (3 years)" min="1" max="61" required>
+      </div>
+      <div class="field">
+        <label>Oldest Record Age (negative months)</label>
+        <input type="number" name="WORST_MONTHS_BALANCE" placeholder="e.g. -36" max="0" min="-61" required>
+      </div>
+    </div>
+    <p style="color:#8FA3BD;font-size:0.78em;margin-top:12px;">
+      💡 Tip: Longer credit history = higher approval chance.
+      Short history (&lt;12 months) typically results in rejection regardless of income.
+      Enter matching negative value for oldest record (e.g. 36 months history → -36).
+    </p>
+  </div>
+
+  <div class="submit-row">
+    <button type="submit">Run Prediction →</button>
+  </div>
+
+</form>
+
+</body>
+</html>

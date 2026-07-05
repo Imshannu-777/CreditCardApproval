@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CreditPredict | Intelligent Approval Engine</title>
+<style>
+  :root{
+    --bg:#0B1929;
+    --panel:#10233B;
+    --panel-line:#1E3A5C;
+    --primary:#3B82F6;
+    --primary-dim:#1E3A5C;
+    --text:#E8EEF6;
+    --muted:#8FA3BD;
+    --mono: 'Cascadia Code', 'Consolas', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI', system-ui, sans-serif;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(59,130,246,0.10), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(59,130,246,0.07), transparent 40%),
+      var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:24px 48px;
+    border-bottom:1px solid var(--panel-line);
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    font-size:1.15em;
+    letter-spacing:-0.3px;
+  }
+  .logo-mark{
+    width:30px;height:30px;border-radius:8px;
+    background:linear-gradient(135deg,#3B82F6,#1E40AF);
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.85em;font-weight:800;
+  }
+  nav .tag{
+    font-family:var(--mono);
+    font-size:0.75em;
+    color:var(--muted);
+    border:1px solid var(--panel-line);
+    padding:4px 10px;
+    border-radius:20px;
+  }
+  main{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 24px;
+  }
+  .hero{
+    max-width:760px;
+    text-align:center;
+  }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:0.78em;
+    color:var(--primary);
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    display:inline-block;
+  }
+  h1{
+    font-size:2.9em;
+    font-weight:800;
+    letter-spacing:-1.2px;
+    line-height:1.15;
+    margin-bottom:20px;
+  }
+  h1 span{color:var(--primary);}
+  .sub{
+    font-size:1.08em;
+    color:var(--muted);
+    line-height:1.65;
+    max-width:560px;
+    margin:0 auto 40px;
+  }
+  .stats{
+    display:flex;
+    justify-content:center;
+    gap:48px;
+    margin-bottom:44px;
+  }
+  .stat .num{
+    font-family:var(--mono);
+    font-size:1.6em;
+    font-weight:700;
+    color:var(--text);
+  }
+  .stat .label{
+    font-size:0.78em;
+    color:var(--muted);
+    margin-top:4px;
+  }
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--primary);
+    color:white;
+    padding:16px 36px;
+    border-radius:10px;
+    font-size:1.02em;
+    font-weight:600;
+    text-decoration:none;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow:0 8px 24px rgba(59,130,246,0.25);
+  }
+  .cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(59,130,246,0.35);
+  }
+  .models{
+    margin-top:56px;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .model-chip{
+    font-family:var(--mono);
+    font-size:0.75em;
+    color:var(--muted);
+    border:1px solid var(--panel-line);
+    background:var(--panel);
+    padding:7px 14px;
+    border-radius:6px;
+  }
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:0.75em;
+    color:var(--muted);
+    border-top:1px solid var(--panel-line);
+  }
+  @media (max-width:600px){
+    h1{font-size:2.1em;}
+    .stats{gap:28px;}
+    nav{padding:20px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-mark">CP</div>
+    CreditPredict
+  </div>
+  <div class="tag">ML ENGINE v1.0</div>
+</nav>
+
+<main>
+  <div class="hero">
+    <span class="eyebrow">Automated Underwriting</span>
+    <h1>Credit decisions, <span>backed by data</span> not guesswork.</h1>
+    <p class="sub">
+      This system evaluates applicant income, employment history, and credit
+      behavior to predict approval outcomes in real time — the same factors
+      banks weigh during manual review, processed instantly.
+    </p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num">4</div>
+        <div class="label">Models Compared</div>
+      </div>
+      <div class="stat">
+        <div class="num">16</div>
+        <div class="label">Risk Factors</div>
+      </div>
+      <div class="stat">
+        <div class="num">&lt;1s</div>
+        <div class="label">Prediction Time</div>
+      </div>
+    </div>
+
+    <a href="/predict" class="cta">Start Application →</a>
+
+    <div class="models">
+      <span class="model-chip">Logistic Regression</span>
+      <span class="model-chip">Decision Tree</span>
+      <span class="model-chip">Random Forest</span>
+      <span class="model-chip">XGBoost</span>
+    </div>
+  </div>
+</main>
+
+<footer>Credit Card Approval Prediction System — for educational demonstration purposes only.</footer>
+
+</body>
+</html>
