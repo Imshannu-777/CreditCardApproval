@@ -156,14 +156,14 @@ Animated circular confidence gauge showing approval probability with color-coded
 
 ## 🧠 Key Concepts Demonstrated
 
-- ✅ Exploratory Data Analysis (Univariate, Multivariate, Descriptive)
-- ✅ Data Cleaning & Merging two datasets
-- ✅ Feature Engineering from multi-month credit records
-- ✅ Handling class imbalance with SMOTE
-- ✅ Training & comparing 4 classification algorithms
-- ✅ Model evaluation (Accuracy, Precision, Recall, F1, Confusion Matrix)
-- ✅ Flask web application with Jinja2 templating
-- ✅ Real-time ML model inference via REST-style form submission
+-  Exploratory Data Analysis (Univariate, Multivariate, Descriptive)
+-  Data Cleaning & Merging two datasets
+-  Feature Engineering from multi-month credit records
+-  Handling class imbalance with SMOTE
+-  Training & comparing 4 classification algorithms
+-  Model evaluation (Accuracy, Precision, Recall, F1, Confusion Matrix)
+-  Flask web application with Jinja2 templating
+-  Real-time ML model inference via REST-style form submission
 
 ---
 
