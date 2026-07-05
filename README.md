@@ -5,7 +5,7 @@ An end-to-end Machine Learning web application that predicts whether a credit ca
 ---
 
 ## 🚀 Live Demo
-👉 [Click here to try the app](https://tactile-dejected-lankiness.ngrok-free.dev)  if it is not work
+👉 [Click here to try the app]( https://creditcardapproval-c9fj.onrender.com)  if it is not work
 > Clone the repo and run locally using Flask (see setup instructions below)
 
 ---
