@@ -5,8 +5,7 @@ An end-to-end Machine Learning web application that predicts whether a credit ca
 ---
 
 ## 🚀 Live Demo
-
-> Clone the repo and run locally using Flask (see setup instructions below)
+👉 [Click here to try the app](https://tactile-dejected-lankiness.ngrok-free.dev)
 
 ---
 
@@ -86,7 +85,7 @@ Two CSV files:
 
 ### 1. Clone the repository
 ```bash
-git clone (https://github.com/Imshannu-777/CreditCardApproval.git)
+git clone https://github.com/Imshannu-777/CreditCardApproval.git
 ```
 
 ### 2. Install dependencies
