@@ -153,7 +153,8 @@ Clean fintech-style landing page with project overview and key stats.
 Sectioned form collecting Personal Details, Financial Profile, Contact Information, and Credit Account History.
 
 ### Result Page
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/3103148d-8a68-43c9-bf6c-e667e8e8a6b5" />
+<img width="1920" height="1200" alt="Screenshot 2026-07-14 071230" src="https://github.com/user-attachments/assets/f097730b-a641-4344-89f1-f59d859d1e2b" />
+
 
 Animated circular confidence gauge showing approval probability with color-coded verdict (green = Approved, red = Rejected).
 
