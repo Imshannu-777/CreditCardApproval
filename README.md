@@ -143,12 +143,18 @@ Raw Data → Data Cleaning → Feature Engineering → Label Encoding
 ## 🖥️ Application Screenshots
 
 ### Home Page
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/6d1fa139-a635-4500-88d1-a55602165eb5" />
+
 Clean fintech-style landing page with project overview and key stats.
 
 ### Application Form
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/82119740-0f0f-431c-a3af-82e22793099c" />
+
 Sectioned form collecting Personal Details, Financial Profile, Contact Information, and Credit Account History.
 
 ### Result Page
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/3103148d-8a68-43c9-bf6c-e667e8e8a6b5" />
+
 Animated circular confidence gauge showing approval probability with color-coded verdict (green = Approved, red = Rejected).
 
 ---
