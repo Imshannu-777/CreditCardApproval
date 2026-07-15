@@ -178,6 +178,7 @@ Animated circular confidence gauge showing approval probability with color-coded
 | Role | Member |
 |---|---|
 | Team Lead | Me |
+| Team members | another 4 members|
 
 
 ---
